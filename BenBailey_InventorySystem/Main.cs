@@ -22,11 +22,6 @@ namespace BenBailey_InventorySystem
 
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -34,7 +29,7 @@ namespace BenBailey_InventorySystem
 
         private void btnDeletePart_Click(object sender, EventArgs e)
         {
-
+            //Delete selected part from database
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -44,18 +39,41 @@ namespace BenBailey_InventorySystem
 
         private void btnAddPart_Click(object sender, EventArgs e)
         {
-            AddPart frm = new AddPart();
+            Part frm = new Part();
             frm.Show();
         }
 
+        //search button at top of Parts section
         private void btnSearchParts_Click(object sender, EventArgs e)
         {
-
+            //Search database for part and display in datagrid
         }
 
         private void btnModifyParts_Click(object sender, EventArgs e)
         {
+            Part frm = new Part();
+            //get data for part in database
+            //align data with form fields
+            frm.Show();
+        }
+
+        //search button at top of Products section
+        private void btnSearchProducts_Click(object sender, EventArgs e)
+        {
 
         }
+        
+        //Input to search database for part and display in datagrid
+        private void textBoxPartsSearch_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        //Input to search database for product and display in datagrid
+        private void textBoxProductSearch_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
     }
 }

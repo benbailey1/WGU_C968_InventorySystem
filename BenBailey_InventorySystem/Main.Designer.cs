@@ -41,7 +41,7 @@ namespace BenBailey_InventorySystem
             this.btnModifyProducts = new System.Windows.Forms.Button();
             this.btnAddProducts = new System.Windows.Forms.Button();
             this.btnSearchProducts = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxProductSearch = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridViewParts = new System.Windows.Forms.DataGridView();
             this.btnDeleteParts = new System.Windows.Forms.Button();
@@ -62,14 +62,15 @@ namespace BenBailey_InventorySystem
             this.inventoryManagementSystemToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(870, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(870, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // inventoryManagementSystemToolStripMenuItem
             // 
+            this.inventoryManagementSystemToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inventoryManagementSystemToolStripMenuItem.Name = "inventoryManagementSystemToolStripMenuItem";
-            this.inventoryManagementSystemToolStripMenuItem.Size = new System.Drawing.Size(184, 20);
+            this.inventoryManagementSystemToolStripMenuItem.Size = new System.Drawing.Size(268, 24);
             this.inventoryManagementSystemToolStripMenuItem.Text = "Inventory Management System";
             // 
             // groupBox1
@@ -80,14 +81,14 @@ namespace BenBailey_InventorySystem
             this.groupBox1.Controls.Add(this.btnModifyProducts);
             this.groupBox1.Controls.Add(this.btnAddProducts);
             this.groupBox1.Controls.Add(this.btnSearchProducts);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.textBoxProductSearch);
             this.groupBox1.Location = new System.Drawing.Point(432, 37);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(426, 393);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Products";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.groupBox1.Enter += new System.EventHandler(this.textBoxPartsSearch_TextChanged);
             // 
             // dataGridViewProducts
             // 
@@ -147,13 +148,15 @@ namespace BenBailey_InventorySystem
             this.btnSearchProducts.TabIndex = 3;
             this.btnSearchProducts.Text = "Search";
             this.btnSearchProducts.UseVisualStyleBackColor = true;
+            this.btnSearchProducts.Click += new System.EventHandler(this.btnSearchProducts_Click);
             // 
-            // textBox2
+            // textBoxProductSearch
             // 
-            this.textBox2.Location = new System.Drawing.Point(286, 25);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(116, 20);
-            this.textBox2.TabIndex = 2;
+            this.textBoxProductSearch.Location = new System.Drawing.Point(286, 25);
+            this.textBoxProductSearch.Name = "textBoxProductSearch";
+            this.textBoxProductSearch.Size = new System.Drawing.Size(116, 20);
+            this.textBoxProductSearch.TabIndex = 2;
+            this.textBoxProductSearch.TextChanged += new System.EventHandler(this.textBoxProductSearch_TextChanged);
             // 
             // groupBox2
             // 
@@ -181,18 +184,18 @@ namespace BenBailey_InventorySystem
             // btnDeleteParts
             // 
             this.btnDeleteParts.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDeleteParts.Location = new System.Drawing.Point(346, 273);
+            this.btnDeleteParts.Location = new System.Drawing.Point(346, 274);
             this.btnDeleteParts.Name = "btnDeleteParts";
             this.btnDeleteParts.Size = new System.Drawing.Size(51, 22);
             this.btnDeleteParts.TabIndex = 3;
             this.btnDeleteParts.Text = "Delete";
             this.btnDeleteParts.UseVisualStyleBackColor = true;
-            this.btnDeleteParts.Click += new System.EventHandler(this.btnAddPart_Click);
+            this.btnDeleteParts.Click += new System.EventHandler(this.btnDeletePart_Click);
             // 
             // btnModifyParts
             // 
             this.btnModifyParts.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnModifyParts.Location = new System.Drawing.Point(289, 273);
+            this.btnModifyParts.Location = new System.Drawing.Point(289, 274);
             this.btnModifyParts.Name = "btnModifyParts";
             this.btnModifyParts.Size = new System.Drawing.Size(51, 22);
             this.btnModifyParts.TabIndex = 7;
@@ -228,6 +231,7 @@ namespace BenBailey_InventorySystem
             this.textBoxPartsSearch.Name = "textBoxPartsSearch";
             this.textBoxPartsSearch.Size = new System.Drawing.Size(116, 20);
             this.textBoxPartsSearch.TabIndex = 1;
+            this.textBoxPartsSearch.TextChanged += new System.EventHandler(this.textBoxPartsSearch_TextChanged);
             // 
             // Main
             // 
@@ -261,7 +265,7 @@ namespace BenBailey_InventorySystem
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnSearchProducts;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxProductSearch;
         private System.Windows.Forms.Button btnSearchParts;
         private System.Windows.Forms.TextBox textBoxPartsSearch;
         private System.Windows.Forms.Button btnDeleteParts;

@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace BenBailey_InventorySystem
 {
-    public partial class AddPart : Form
+    public partial class Product : Form
     {
-        public AddPart()
+        public Product()
         {
             InitializeComponent();
+            //TODO: IF AddPart == true, display AddPart in label1 ELSE display ModifyPart in label1
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
