@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BenBailey_InventorySystem.DataContracts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace BenBailey_InventorySystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+            Application.Run(new MainScreen());
         }
     }
 }
